@@ -5,7 +5,7 @@
 	}
 	function onSubmit() {
 		alert(
-			'This newsletter section is not yet implemented! if you are seeing this outside of swyxkit then go remind the site author to update Newsletter.svelte.'
+			'This newsletter section is not yet implemented! if you are seeing this outside then go remind the site author to update Newsletter.svelte.'
 		);
 	}
 </script>

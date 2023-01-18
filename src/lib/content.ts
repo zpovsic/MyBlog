@@ -29,7 +29,7 @@ const rehypePlugins = [
 ];
 
 let allBlogposts = [];
-// let etag = null // todo - implmement etag header
+// let etag = null // TODO - implmement etag header
 
 /**
  * @param {string | number} text
@@ -180,7 +180,7 @@ export async function getContent(providedFetch, slug) {
 				const url = x.startsWith('https://twitter.com/') ? x : `https://twitter.com/x/status/${x}`;
 				return `
 					<blockquote class="twitter-tweet" data-lang="en" data-dnt="true" data-theme="dark">
-					<a href="${url}"></a></blockquote> 
+					<a href="${url}"></a></blockquote>
 					<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 					`;
 			});

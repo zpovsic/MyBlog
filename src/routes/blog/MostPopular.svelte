@@ -10,12 +10,12 @@
 		href="/welcome"
 		><div class="w-full">
 			<div class="flex flex-col justify-between md:flex-row">
-				<h4 class="mb-2 w-full flex-auto text-lg font-bold md:text-xl">Welcome to swyxkit!</h4>
+				<h4 class="mb-2 w-full flex-auto text-lg font-bold md:text-xl">Welcome to PZ Blog!</h4>
 			</div>
 			<p
 				class="ml-8 text-gray-600  hover:text-yellow-600 dark:text-gray-400 dark:hover:text-yellow-100"
 			>
-				This is swyx's preferred starter for Svelte projects!
+				This is PZ Blog starter for Svelte projects!
 			</p>
 		</div></a
 	>
@@ -29,7 +29,7 @@
 			<p
 				class="ml-8 text-gray-600  hover:text-yellow-600 dark:text-gray-400 dark:hover:text-yellow-100"
 			>
-				The most popular (optional!) decision of SwyxKit!
+				The most popular (optional!) decision of PZ Blog!
 			</p>
 		</div></a
 	>

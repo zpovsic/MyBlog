@@ -51,8 +51,8 @@
 				!
 			</h1>
 			<h2 class="mb-4 text-gray-700 dark:text-gray-200">
-				An opinionated blog starter for <span class="font-semibold"
-					>SvelteKit + Tailwind + Netlify/Vercel.</span
+				My blog starter for <span class="font-semibold"
+					>SvelteKit + Tailwind + Vercel.</span
 				>
 				Updated for
 				<a href="https://github.com/sveltejs/kit/">SvelteKit 1.0</a>!
@@ -71,13 +71,13 @@
 			Featured Posts
 		</h3>
 		<div class="flex flex-col gap-6 md:flex-row">
-			<FeatureCard title="Welcome to swyxkit 2022!" href="/welcome" stringData="Jan 2022" />
+			<FeatureCard title="Welcome to PZ Blog 2023!" href="/welcome" stringData="Jan 2022" />
 			<FeatureCard
 				title="Moving to a GitHub CMS"
 				href="/moving-to-a-github-cms"
-				stringData="Jan 2022"
+				stringData="Jan 2023"
 			/>
-			<FeatureCard title="HTML Ipsum demo" href="/moo" stringData="Jan 2022" />
+			<FeatureCard title="HTML Ipsum demo" href="/moo" stringData="Jan 2023" />
 		</div>
 	</section>
 

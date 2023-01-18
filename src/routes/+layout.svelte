@@ -60,7 +60,7 @@
 	</div>
 	<p class="prose px-4 dark:prose-invert sm:px-8">
 		This blog is based on the
-		<a href="https://swyxkit.netlify.app/">swyxkit</a>
+		<a href="https://vercel.zpovsic.MyBlog.app/">MyBlog</a>
 		template.
 	</p>
 </footer>

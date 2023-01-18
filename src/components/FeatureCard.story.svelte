@@ -17,13 +17,13 @@
 				Featured Posts
 			</h3>
 			<div class="flex flex-col gap-6 md:flex-row">
-				<FeatureCard title="Welcome to swyxkit 2022!" href="/welcome" stringData="Jan 2022" />
+				<FeatureCard title="Welcome to PZ Blog!" href="/welcome" stringData="Jan 2023" />
 				<FeatureCard
 					title="Moving to a GitHub CMS"
 					href="/moving-to-a-github-cms"
-					stringData="Jan 2022"
+					stringData="Jan 2023"
 				/>
-				<FeatureCard title="HTML Ipsum demo" href="/moo" stringData="Jan 2022" />
+				<FeatureCard title="HTML Ipsum demo" href="/moo" stringData="Jan 2023" />
 			</div>
 			<a
 				class="mt-8 flex h-6 rounded-lg leading-7 text-gray-600 transition-all dark:text-gray-400 dark:hover:text-gray-200"
@@ -47,12 +47,12 @@
 
 	<Hst.Variant title="Fast">
 		<div class="flex flex-col gap-6 md:flex-row">
-			<FeatureCard title={prefixString + ' Fast 2022!'} href="/welcome" stringData="Jan 2022" />
+			<FeatureCard title={prefixString + ' Fast 2023!'} href="/welcome" stringData="Jan 2023" />
 		</div>
 	</Hst.Variant>
 	<Hst.Variant title="Slow">
 		<div class="flex flex-col gap-6 md:flex-row">
-			<FeatureCard title={prefixString + ' Slow 2022!'} href="/welcome" stringData="Jan 2022" />
+			<FeatureCard title={prefixString + ' Slow 2022!'} href="/welcome" stringData="Jan 2023" />
 		</div>
 	</Hst.Variant>
 </Hst.Story>

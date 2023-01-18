@@ -129,7 +129,7 @@
 		<IndexCard href="/foo" title="Hardcoded Blogpost # 1" stringData="106,255 views">
 			Just a hardcorded blogpost or you can use the metadata up to you
 		</IndexCard>
-		<IndexCard href="/welcome" title="Welcome to Swyxkit" stringData="106,255 views">
+		<IndexCard href="/welcome" title="Welcome to PZ Blog" stringData="106,255 views">
 			Just a hardcorded blogpost or you can use the metadata up to you
 		</IndexCard>
 		<IndexCard href="/moo" title="Hardcoded Blogpost # 3" stringData="106,255 views">
