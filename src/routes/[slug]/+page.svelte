@@ -44,7 +44,7 @@
 
 <svelte:head>
 	<title>{json.title}</title>
-	<meta name="description" content="swyxkit blog" />
+	<meta name="description" content="PZ blog" />
 	<!-- reference: https://gist.github.com/whitingx/3840905 -->
 
 	<link rel="canonical" href={canonical} />

@@ -61,6 +61,6 @@
 	<p class="prose px-4 dark:prose-invert sm:px-8">
 		This blog is based on the
 		<a href="https://vercel.zpovsic.MyBlog.app/">MyBlog</a>
-		template.
+		template, inspired by swyx.
 	</p>
 </footer>

@@ -3,12 +3,9 @@
 	// import { goto } from '$app/navigation';
 	// import { page } from '$app/stores';
 	import { queryParam, ssp } from 'sveltekit-search-params';
-
 	import { SITE_TITLE, POST_CATEGORIES } from '$lib/siteConfig';
-
 	import IndexCard from '../../components/IndexCard.svelte';
 	import MostPopular from './MostPopular.svelte';
-
 	import uFuzzy from '@leeoniya/ufuzzy';
 
 	/** @type {import('./$types').PageData} */
@@ -94,7 +91,7 @@
 </script>
 
 <svelte:head>
-	<title>{SITE_TITLE} Blog Index</title>
+	<title>{SITE_TITLE} Index</title>
 	<meta name="description" content={`Latest ${SITE_TITLE} posts`} />
 </svelte:head>
 
@@ -102,11 +99,13 @@
 
 <section class="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center px-4 sm:px-8">
 	<h1 class="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
-		{SITE_TITLE} Blog
+		{SITE_TITLE}
 	</h1>
 	<p class="mb-4 text-gray-600 dark:text-gray-400">
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sunt reprehenderit alias rerum
-		dolor impedit. In total, I've written {items.length} articles on my blog. Use the search below to
+		dolor impedit.
+		<br /><br />
+		In total, I've written {items.length} articles on my blog. Use the search below to
 		filter by title.
 	</p>
 	<div class="relative mb-4 w-full">
