@@ -1,3 +1,4 @@
+<!-- https://histoire.dev/guide/svelte3/stories.html -->
 <!-- https://histoire.dev/guide/svelte3/controls.html -->
 <script>
 	import Newsletter from './Newsletter.svelte';
@@ -6,18 +7,18 @@
 	export let Hst;
 </script>
 
-<!-- https://histoire.dev/guide/svelte3/stories.html -->
-
 <Hst.Story title="Misc Components" layout={{ type: 'grid', width: '100%' }}>
+
 	<!-- <Hst.Variant title="Nav">
 		<Nav />
 	</Hst.Variant> -->
 	<Hst.Variant title="Index page cards">
 		<IndexCard href="/welcome" title="Welcome to PZ Blog!" stringData="123,456 views">
-			This is PZ most advanced Blog for Svelte projects!
+			This is my blog starter for Svelte projects!
 		</IndexCard>
 	</Hst.Variant>
 	<Hst.Variant title="Newsletter">
 		<Newsletter />
 	</Hst.Variant>
+
 </Hst.Story>

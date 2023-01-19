@@ -1,12 +1,25 @@
 <script>
-	let isNewsletterOpen = true;
+	// @ts-nocheck
+
+	// https://rodneylab.com/using-local-storage-sveltekit/
+	import { browser } from '$app/environment';
+	import { writable } from 'svelte/store';
+
+	const defaultValue = true;
+	const initialValue = browser
+		? window.localStorage.getItem('isNewsletterOpen') ?? defaultValue
+		: defaultValue;
+
+	const isNewsletterOpen = writable(!!initialValue);
+
+	isNewsletterOpen.subscribe((value) => {
+		if (browser) {
+			window.localStorage.setItem('isNewsletterOpen', value ? 'true' : 'false');
+		}
+	});
+
 	function toggleNewsletter() {
-		isNewsletterOpen = !isNewsletterOpen;
-	}
-	function onSubmit() {
-		alert(
-			'This newsletter section is not yet implemented! if you are seeing this outside then go remind the site author to update Newsletter.svelte.'
-		);
+		$isNewsletterOpen = !$isNewsletterOpen;
 	}
 </script>
 
@@ -53,13 +66,23 @@
 		</div>
 		{#if isNewsletterOpen}
 			<p class="my-1 text-gray-800 dark:text-gray-200">
-				Get emails from me about <span class="font-bold"
+				Get emails from me pz <span class="font-bold"
 					>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero, ducimus.</span
 				>.
 			</p>
-			<form class="relative my-4" on:submit={onSubmit}>
+			// TODO: change swyx to your own buttondown email
+			<form
+				class="relative my-4"
+				action="https://buttondown.email/api/emails/embed-subscribe/swyx"
+				method="post"
+				target="popupwindow"
+				on:submit={() =>
+					toggleNewsletter() && window.open('https://buttondown.email/swyx', 'popupwindow')}
+			>
 				<input
 					type="email"
+					id="bd-email"
+					name="email"
 					aria-label="Email for newsletter"
 					placeholder="tim@apple.com"
 					autocomplete="email"
@@ -71,7 +94,7 @@
 				>
 			</form>
 			<p class="text-sm text-gray-800 dark:text-gray-200">
-				3 subscribers including my Mom – <a href="/#newsletter">23 issues</a>
+				5,432 subscribers including my Mom – <a href="/#newsletter">123 issues</a>
 			</p>
 		{/if}
 	</div>

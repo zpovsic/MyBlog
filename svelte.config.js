@@ -47,15 +47,8 @@ const config = {
 	kit: {
 		adapter: adapter({
 			split: false,
-
-			// nov 2022
-			// if true, will create a Netlify Edge Function rather
-			// than using standard Node-based functions. however, also uses esbuild, which as of nov 2022 has a bug on netlify
-			// https://github.com/sveltejs/kit/issues/7839#issuecomment-1328605300
-
-			// dec 2022 - moved back to true since we're using esbuild again
-			edge: true
-		})
+			edge: true,
+		}),
 		// https://kit.svelte.dev/docs/configuration#csp
 		// csp: {
 		// 	directives: {

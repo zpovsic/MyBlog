@@ -3,9 +3,12 @@
 	// import { goto } from '$app/navigation';
 	// import { page } from '$app/stores';
 	import { queryParam, ssp } from 'sveltekit-search-params';
+
 	import { SITE_TITLE, POST_CATEGORIES } from '$lib/siteConfig';
+
 	import IndexCard from '../../components/IndexCard.svelte';
 	import MostPopular from './MostPopular.svelte';
+
 	import uFuzzy from '@leeoniya/ufuzzy';
 
 	/** @type {import('./$types').PageData} */
@@ -36,6 +39,8 @@
 	}
 
 	// https://github.com/leeoniya/uFuzzy#options
+	// we know this has js weight, but we tried lazyloading and it wasnt significant enough for the added complexity
+	// this will be slow if you have thousands of items, but most people don't
 	const u = new uFuzzy({ intraMode: 1 });
 	const mark = (part, matched) =>
 		matched ? '<b style="color:var(--brand-accent)">' + part + '</b>' : part;
@@ -55,7 +60,13 @@
 		});
 		if ($search) {
 			const haystack = filteredItems.map((v) =>
-				[v.title, v.subtitle, v.tags, v.content, v.description].join(' ')
+				[
+					v.title,
+					v.subtitle,
+					v.tags.map((tag) => 'hashtag-' + tag), // add #tag so as to enable tag search
+					v.content,
+					v.description
+				].join(' ')
 			);
 			let idxs = u.filter(haystack, $search);
 			let info = u.info(idxs, haystack, $search);
@@ -91,7 +102,7 @@
 </script>
 
 <svelte:head>
-	<title>{SITE_TITLE} Index</title>
+	<title>{SITE_TITLE} Blog Index</title>
 	<meta name="description" content={`Latest ${SITE_TITLE} posts`} />
 </svelte:head>
 
@@ -103,9 +114,7 @@
 	</h1>
 	<p class="mb-4 text-gray-600 dark:text-gray-400">
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sunt reprehenderit alias rerum
-		dolor impedit.
-		<br /><br />
-		In total, I've written {items.length} articles on my blog. Use the search below to
+		dolor impedit. In total, I've written {items.length} articles on my blog. Use the search below to
 		filter by title.
 	</p>
 	<div class="relative mb-4 w-full">

@@ -2,7 +2,7 @@ export const SITE_URL = 'https://vercel.zpovsic.MyBlog.app';
 export const APPROVED_POSTERS_GH_USERNAME = ['zpovsic'];
 export const GH_USER_REPO = 'zpovsic/MyBlog'; // used for pulling github issues and offering comments
 export const SITE_TITLE = ' PZ Blog';
-export const SITE_DESCRIPTION = "PZ Blog SvelteKit + Tailwind starter";
+export const SITE_DESCRIPTION = "My Blog SvelteKit + Tailwind starter";
 export const DEFAULT_OG_IMAGE =
 	'https://avatars.githubusercontent.com/u/1773876?s=40&v=4';
 export const MY_TWITTER_HANDLE = 'zpovsic';

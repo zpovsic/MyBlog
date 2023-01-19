@@ -2,10 +2,8 @@
   import Readme from '../../../README.md'
 </script>
 
-PZ Blog is a performant, fully featured content site up and running with SvelteKit, Tailwind CSS, and other blog features (listed below).
+This blog is a fully featured content site up and running with SvelteKit, Tailwind CSS, and other blog features .
 
-Below is the full README from my repo. I've also included a link to the live site.
+<!-- ---
 
----
-
-<Readme />
+<Readme /> -->

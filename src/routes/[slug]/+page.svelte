@@ -24,7 +24,6 @@
 	$: canonical = SITE_URL + $page.url.pathname;
 
 	// customize this with https://tailgraph.com/
-	// discuss this decision at https://github.com/sw-yx/swyxkit/pull/161
 	$: image =
 		json?.image ||
 		`https://og.tailgraph.com/og
@@ -67,8 +66,8 @@
 <TableOfContents {tocStore} />
 
 <article
-	class="swyxcontent prose mx-auto mt-16 mb-32 w-full max-w-none items-start justify-center dark:prose-invert"
-	use:toc={{ store: tocStore, anchor: false, observe: true }}
+	use:toc={{ store: tocStore, anchor: false, observe: true, selector: ':where(h1, h2, h3)' }}
+	class="pzcontent prose mx-auto mt-16 mb-32 w-full max-w-none items-start justify-center dark:prose-invert"
 >
 	<h1
 		class="mb-8 text-3xl font-bold tracking-tight text-black dark:text-white md:text-center md:text-5xl "
@@ -78,8 +77,8 @@
 	<div
 		class="bg border-red mt-2 flex w-full justify-between sm:items-start md:flex-row md:items-center"
 	>
-		<p class="flex items-center text-sm text-gray-700 dark:text-gray-300">swyx</p>
-		<p class="min-w-32 flex items-center text-sm text-gray-600 dark:text-gray-400">
+		<p class="flex items-center text-sm text-gray-700 dark:text-gray-300">pz</p>
+		<p class="flex items-center text-sm text-gray-600 dark:text-gray-400">
 			<a
 				href={json.ghMetadata.issueUrl}
 				rel="external noreferrer"
@@ -97,10 +96,19 @@
 		class="-mx-4 my-2 flex h-1 w-[100vw] bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 sm:mx-0 sm:w-full"
 	/>
 	{@html json.content}
-	<!-- <div class="flex-row w-full mt-16 mb-32 prose swyxcontent max-w-none dark:prose-invert">
-	</div> -->
 </article>
+
 <div class="mx-auto max-w-2xl">
+	{#if json?.tags?.length}
+		<p class="mb-4 flex-auto italic !text-slate-400">
+			Tagged in:
+			{#each json.tags as tag}
+				<span class="px-1">
+					<a href={`/blog?filter=hashtag-${tag}`}>#{tag}</a>
+				</span>
+			{/each}
+		</p>
+	{/if}
 	<div class="prose mb-12 max-w-full border-t border-b border-blue-800 p-4 dark:prose-invert">
 		{#if json.ghMetadata.reactions.total_count > 0}
 			Reactions: <Reactions
@@ -126,7 +134,7 @@
 
 <style>
 	/* https://ryanmulligan.dev/blog/layout-breakouts/ */
-	.swyxcontent {
+	.pzcontent {
 		--gap: clamp(1rem, 6vw, 3rem);
 		--full: minmax(var(--gap), 1fr);
 		/* --content: min(65ch, 100% - var(--gap) * 2); */
@@ -146,7 +154,7 @@
 	}
 
 	@media (min-width: 768px) {
-		.swyxcontent {
+		.pzcontent {
 			grid-template-columns:
 				[full-start] var(--full)
 				[feature-start] var(--feature)
@@ -158,7 +166,7 @@
 		}
 	}
 
-	:global(.swyxcontent > *) {
+	:global(.pzcontent > *) {
 		grid-column: content;
 	}
 
@@ -166,6 +174,11 @@
 		grid-column: feature;
 		margin-left: -1rem;
 		margin-right: -1rem;
+	}
+
+	/* hacky thing because otherwise the summary>pre causes overflow */
+	article :global(summary > pre) {
+		max-width: 90vw;
 	}
 
 	article :global(.popout) {

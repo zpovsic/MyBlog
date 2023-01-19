@@ -1,10 +1,11 @@
-# SwyxKit
+# PZ Blog
 
 A lightly opinionated blog for [SvelteKit](https://kit.svelte.dev/) blogs:
 
 - SvelteKit 1.0 + [Mdsvex](https://mdsvex.pngwn.io/) setup verified to work on Netlify and Vercel
 - Tailwind 3 + Tailwind Typography (with [some fixes](https://youtu.be/-FzemNMcOGs))
-- [GitHub Issues as CMS](https://github.com/sw-yx/swyxkit/issues/10) - with comments displayed via [utterances](https://utteranc.es/) (lazy loaded)
+- [GitHub Issues as CMS](https://github.com/sw-yx/swyxkit/issues/10)
+- Comment and Reaction system from GitHub Issues, [rendered with Utterances](https://swyxkit.netlify.app/moving-blog-comments-to-utterances) with comments displayed via [utterances](https://utteranc.es/) (lazy loaded)
 - Content options
   - [Twitter/YouTube Embeds](https://swyxkit.netlify.app/supporting-youtube-and-twitter-embeds) - made [fast](https://swyxkit.netlify.app/faster-youtube-embeds)
   - [Admonitions and Bleed layouts](https://swyxkit.netlify.app/layout-breakouts-in-swyxkit)
@@ -122,7 +123,7 @@ export const SITE_URL = 'https://swyxkit.netlify.app';
 export const APPROVED_POSTERS_GH_USERNAME = ['sw-yx']; // IMPORTANT: change this to at least your GitHub username, or add others if you want
 export const GH_USER_REPO = 'sw-yx/swyxkit'; // Used for pulling GitHub issues and offering comments
 export const REPO_URL = 'https://github.com/' + GH_USER_REPO;
-export const SITE_TITLE = 'SwyxKit';
+export const SITE_TITLE = 'PZ Blog';
 export const SITE_DESCRIPTION = "swyx's default SvelteKit + Tailwind starter";
 export const DEFAULT_OG_IMAGE =
 	'https://user-images.githubusercontent.com/6764957/147861359-3ad9438f-41d1-47c8-aa05-95c7d18497f0.png';
@@ -185,7 +186,7 @@ If all of this is annoying feel free to rip out the GitHub Issues CMS wiring and
 
 ## Optimizations to try after you are done deploying
 
-- Customize your JSON+LD for [FAQ pages](https://rodneylab.com/sveltekit-faq-page-seo/), [organization, or products](https://navillus.dev/blog/json-ld-in-sveltekit). There is a schema for blogposts, but it is so dead simple that SwyxKit does not include it.
+- Customize your JSON+LD for [FAQ pages](https://rodneylab.com/sveltekit-faq-page-seo/), [organization, or products](https://navillus.dev/blog/json-ld-in-sveltekit). There is a schema for blogposts, but it is so dead simple that we do not include it.
 - Have a process to [submit your sitemap to Google](https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap#addsitemap)? (or configure `robots.txt` and hope it works)
 - Testing: make sure you have run `npx playwright install` and then you can run `npm run test`
 

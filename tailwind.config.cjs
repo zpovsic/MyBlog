@@ -35,7 +35,7 @@ module.exports = {
 							borderColor: 'rgba(0,0,0,0.1)'
 						},
 						pre: {
-							'border-radius': '0rem'
+							'border-radius': '0rem',
 						},
 						'a:hover': {
 							color: '#31cdce !important',
@@ -70,5 +70,7 @@ module.exports = {
 		}
 	},
 	variants: {},
-	plugins: [require('@tailwindcss/typography')]
+	plugins: [
+		require('@tailwindcss/typography')
+	]
 };

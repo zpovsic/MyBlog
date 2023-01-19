@@ -11,6 +11,7 @@
 		MY_TWITTER_HANDLE
 	} from '$lib/siteConfig';
 
+
 	/** @type {import('./$types').PageData} */
 	export let data;
 	// technically this is a slighlty different type because doesnt have 'content' but we'll let it slide
@@ -36,7 +37,7 @@
 </svelte:head>
 
 <div
-	class="mx-auto flex max-w-2xl flex-col items-start justify-center border-gray-200 px-4 pb-16 dark:border-gray-700 sm:px-8"
+	class="flex flex-col items-start justify-center max-w-2xl px-4 pb-16 mx-auto border-gray-200 dark:border-gray-700 sm:px-8"
 >
 	<div class="flex flex-col-reverse items-start sm:flex-row">
 		<div class="flex flex-col pr-8">
@@ -44,18 +45,19 @@
 				This is
 
 				<span
-					class="relative ml-2 inline-block before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-red-500"
+					class="relative inline-block ml-2 before:absolute before:-inset-1 before:block before:-skew-y-3 before:bg-red-500"
 				>
-					<span class="relative skew-y-3 text-yellow-400">{SITE_TITLE}</span>
+					<span class="relative text-yellow-400 skew-y-3">{SITE_TITLE}</span>
 				</span>
 				!
 			</h1>
 			<h2 class="mb-4 text-gray-700 dark:text-gray-200">
-				My blog starter for <span class="font-semibold"
-					>SvelteKit + Tailwind + Vercel.</span
-				>
-				Updated for
-				<a href="https://github.com/sveltejs/kit/">SvelteKit 1.0</a>!
+				An opinionated blog starter for <span class="font-semibold"
+					>SvelteKit + Tailwind + Netlify/Vercel.</span
+				> Updated for
+				<a href="https://github.com/sveltejs/kit/"
+					>SvelteKit 1.0</a
+				>!
 			</h2>
 			<p class="mb-16 text-gray-600 dark:text-gray-400">
 				<a href={REPO_URL}>View source and feature list here!</a>
@@ -66,18 +68,18 @@
 			/> -->
 	</div>
 
-	<section class="mb-16 w-full">
+	<section class="w-full mb-16">
 		<h3 class="mb-6 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
 			Featured Posts
 		</h3>
 		<div class="flex flex-col gap-6 md:flex-row">
-			<FeatureCard title="Welcome to PZ Blog 2023!" href="/welcome" stringData="Jan 2022" />
+			<FeatureCard title="Welcome to blog!" href="/welcome" stringData="Jan 2022" />
 			<FeatureCard
 				title="Moving to a GitHub CMS"
 				href="/moving-to-a-github-cms"
-				stringData="Jan 2023"
+				stringData="Jan 2022"
 			/>
-			<FeatureCard title="HTML Ipsum demo" href="/moo" stringData="Jan 2023" />
+			<FeatureCard title="HTML Ipsum demo" href="/moo" stringData="Jan 2022" />
 		</div>
 	</section>
 

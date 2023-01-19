@@ -29,7 +29,7 @@ const rehypePlugins = [
 ];
 
 let allBlogposts = [];
-// let etag = null // TODO - implmement etag header
+// let etag = null // todo - implmement etag header
 
 /**
  * @param {string | number} text
@@ -231,9 +231,8 @@ function parseIssue(issue) {
 
 	/** @type {string[]} */
 	let tags = [];
-	if (data.tags) tags = Array.isArray(data.tags) ? data.tags : [data.tags];
-	tags = tags.map((tag) => tag.toLowerCase());
-	// console.log(slug, tags);
+	if (data.tags)
+		tags = Array.isArray(data.tags) ? data.tags : data.tags.split(',').map((x) => x.trim());
 
 	return {
 		type: 'blog', // futureproof in case you want to add other types of content
